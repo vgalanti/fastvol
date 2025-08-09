@@ -1,0 +1,15 @@
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignOperands: Align
+AlignTrailingComments: true
+AllowShortIfStatementsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: true
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: true
+BreakBeforeBraces: Allman
+BinPackArguments: false
+BinPackParameters: false
+ColumnLimit: 100
+PenaltyReturnTypeOnItsOwnLine: 100
+IndentWidth: 4

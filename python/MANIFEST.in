@@ -1,0 +1,12 @@
+include README.md
+include LICENSE
+graft fastvol/_core
+recursive-include fastvol *.pyx *.pxd *.pxi *.pyi *.pt
+
+prune build
+prune dist
+prune fastvol.egg-info
+
+recursive-exclude * __pycache__ *.py[co] .DS_Store
+global-exclude *.so *.dylib *.dll *.a *.o *.lo *.la *.lock
+

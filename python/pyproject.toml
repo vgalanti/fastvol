@@ -1,0 +1,24 @@
+[project]
+name = "fastvol"
+version = "0.1.0"
+description = "High-performance option pricing and volatility modeling library."
+authors = [{ name = "Valerio Galanti" }]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.3", "numpy>=1.26"]
+
+
+[build-system]
+requires = [
+    "setuptools>=69",
+    "wheel",
+    "cython>=3.0",
+    "numpy>=1.26",
+    "torch>=2.3",
+]
+build-backend = "setuptools.build_meta"
+
+
+[project.urls]
+Homepage = "https://github.com/vgalanti/fastvol"
