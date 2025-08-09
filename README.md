@@ -6,9 +6,8 @@ It provides fast and accurate pricing, greeks, and implied volatility inversion 
 
 Most open-source libraries focus on European options with closed-form solutions, and offer only basic or slow methods for American-style pricing — falling short of the speed required to support the volume and liquidity of modern U.S. derivatives markets. Fastvol addresses this gap with efficient and fully featured American option models, built for large-scale workloads, live systems, research environments, and machine learning pipelines.
 
-
 <div align="center">
-  <img src="https://raw.githubusercontent.com/vgalanti/fastvol/refs/heads/main/docs/assets/bopm_throughput.png"/>
+  <img src="https://raw.githubusercontent.com/vgalanti/fastvol/main/docs/assets/bopm_throughput.png"/>
   <p><em>Figure: BOPM pricing throughput on a GH200 system (log-scale) </em></p>
 </div>
 
@@ -51,7 +50,7 @@ Extensive documentation on implementations, optimizations, and neural surrogates
 - [Design Choices](https://github.com/vgalanti/fastvol/blob/main/docs/choices.md)
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/vgalanti/fastvol/refs/heads/main/docs/assets/neural/nn_puts.gif"/>
+  <img src="https://raw.githubusercontent.com/vgalanti/fastvol/main/docs/assets/neural/nn_puts.gif"/>
   <p><em>Figure: Pricing accuracy comparison on American Puts: Neural Surrogate vs Bjerksund-Stensland 2002 </em></p>
 </div>
 
