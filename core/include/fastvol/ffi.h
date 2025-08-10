@@ -4,7 +4,7 @@
  *
  * @author Valerio Galanti
  * @date 2025
- * @version 0.1.0
+ * @version 0.1.1
  * @license MIT License
  *
  * This header provides a pure C interface to the core functionalities of the fastvol library,

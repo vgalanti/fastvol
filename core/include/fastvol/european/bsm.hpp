@@ -4,7 +4,7 @@
  *
  * @author Valerio Galanti
  * @date 2025
- * @version 0.1.0
+ * @version 0.1.1
  * @license MIT License
  *
  * This file contains the C++ implementation of the BSM model for pricing European options,

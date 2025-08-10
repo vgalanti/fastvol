@@ -199,6 +199,9 @@ setup(
     packages=find_packages(include=["fastvol", "fastvol.*"]),
     package_dir={"": "."},
     include_package_data=True,
+    package_data={
+        "fastvol.neural": ["checkpoints/*.pt"],
+    },
     ext_modules=ext_modules,
     cmdclass={"build_ext": CMakeBuildExt, "sdist": sdist},
     zip_safe=False,

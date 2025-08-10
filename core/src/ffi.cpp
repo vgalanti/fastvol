@@ -2077,7 +2077,7 @@ extern "C"
             P, S, K, cp_flag, ttm, r, q, n_options, results, tol, max_iter, lo_init, hi_init);
     }
 
-    const char *fastvol_version(void) { return "0.1.0"; }
+    const char *fastvol_version(void) { return "0.1.1"; }
     bool        fastvol_cuda_available(void)
     {
 #ifdef FASTVOL_CUDA_ENABLED

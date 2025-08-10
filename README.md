@@ -94,7 +94,7 @@ include(FetchContent)
 FetchContent_Declare(
   fastvol
   GIT_REPOSITORY https://github.com/vgalanti/fastvol
-  GIT_TAG v0.1.0
+  GIT_TAG v0.1.1
   SOURCE_SUBDIR  core
 )
 FetchContent_MakeAvailable(fastvol)

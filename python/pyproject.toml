@@ -1,6 +1,6 @@
 [project]
 name = "fastvol"
-version = "0.1.0"
+version = "0.1.1"
 description = "High-performance option pricing and volatility modeling library."
 authors = [{ name = "Valerio Galanti" }]
 readme = "README.md"

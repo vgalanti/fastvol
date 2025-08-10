@@ -4,7 +4,7 @@
  *
  * @author Valerio Galanti
  * @date 2025
- * @version 0.1.0
+ * @version 0.1.1
  * @license MIT License
  *
  * This file includes all the necessary headers for the fastvol library and provides
@@ -22,7 +22,7 @@
  * @brief Returns the version of the fastvol library.
  * @return A string representing the library version.
  */
-const char *fastvol_version(void) { return "0.1.0"; }
+const char *fastvol_version(void) { return "0.1.1"; }
 
 /**
  * @brief Checks if the fastvol library was compiled with CUDA support.

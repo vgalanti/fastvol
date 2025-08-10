@@ -2,7 +2,7 @@
 Fastvol: High-performance option pricing and volatility modeling library.
 
 Author: Valerio Galanti
-Version: 0.1.0
+Version: 0.1.1
 License: MIT License
 
 Fastvol provides ultra-low-latency derivatives pricing and Greeks
