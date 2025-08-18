@@ -256,14 +256,11 @@ RB-PSOR offers the best of both worlds in theory (and practice), by minimizing t
 ---
 
 ## Applying These Methods in Practice
-Let’s now turn to implementation. Below, we sketch pseudocode and simplified C-style loops to 
-clarify the mechanics and vectorization potential of each method. It's important to note that during the iterations we only update inner points, so `N=N_S-2`.
+Let’s now turn to implementation. Below, we sketch pseudocode and simplified C-style loops to clarify the mechanics and vectorization potential of each method, with $a=\alpha$, $b=\beta$, and $c=\gamma$. It's important to note that during the iterations we only update inner points, so `N=N_S-2`.
 
 Because the implementations are written in C, we avoid expensive memory copies by using 
 double-buffering and pointer swaps. At each timestep, we keep the main option values in 
-an array `v`, and use `x` and `x_old` as working buffers to compute the solution to the next linear 
-system. Conceptually, at any point in the iterative backward stepping process, we are solving a 
-system of the form: `A x = v`, and then swapping `x` and `v` before moving to the next time step.
+an array `v`, and use `x` and `x_old` as working buffers to compute the solution to the next linear system. Conceptually, at any point in the iterative backward stepping process, we are solving a system of the form: `A x = v`, and then swapping `x` and `v` before moving to the next time step.
 
 ```c
 double v[N];     // value buffer
@@ -271,11 +268,7 @@ double x[N];     // iteration buffer
 double x_old[N]; // previous iteration buffer
 ```
 
-At the start of each iterative solve for `x`, we initialize it with a guess — stored in `x_old` 
-(or directly in `x` if only one buffer is needed). The initial guess is typically set to either 
-the payoff at that node, or to the next timestep's values (i.e. the contents of `v` in 
-the system $Ax = v$). The choice of initialization affects convergence and will be discussed 
-in detail later. 
+At the start of each iterative solve for `x`, we initialize it with a guess — stored in `x_old` (or directly in `x` if only one buffer is needed). The initial guess is typically set to either the payoff at that node, or to the next timestep's values (i.e. the contents of `v` in the system $Ax = v$). The choice of initialization affects convergence and will be discussed in detail later. 
 
 ### Jacobi
 
@@ -381,7 +374,7 @@ where $\rho(B)$ is the spectral radius of the Jacobi iteration matrix $B$. In ou
 \rho(B) = \frac{|a+c| \cos(\pi / (n+1))}{b}
 ```
 
-However, this formula assumes Dirichlet boundary conditions and the classical SOR convergence theory. Due to the projection from the payoff boundary, this $\omega$ is not necessarily optimal, and sometimes differ quite significantly from the true optimal. However, it is a good first estimate, that we can adjust between timesteps.
+However, this formula assumes Dirichlet boundary conditions and the classical SOR convergence theory. Due to the projection from the payoff boundary, this $\omega$ is not necessarily optimal, and sometimes differs quite significantly from the true optimal. However, it is a good first estimate, that we can adjust between timesteps.
 
 Here are some simple empirical observations we can make when looking at the iteration counts over timestep that hold for both payoff and $V^{n+1}$ initializations.
 

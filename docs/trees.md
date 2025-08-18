@@ -188,8 +188,7 @@ Now, our inner loop is arithmetically simple (2 mults, 1 add, 3 reads and 1 `fma
 In the final version in [bopm.hpp](../core/include/fastvol/american/bopm.hpp), you will notice a few differences:
 - `pow` calculations are replaced with `log-exp` expressions for numerical stability for large `n_step` values
 - buffers are explicitly 64-bit aligned for SIMD 
-- buffers are allocated on stack up to `n=2048` for predictable latency, after which they allocated on heap for higher values
-- for-loop indices are changed to be from `i=0` to `i=n-1`
+- buffers are allocated on stack up to `n=2048` for predictable latency, after which they are allocated on heap for higher values
 - `v_next` array is dropped: using only `v` is enough and doesn't introduce loop-carried dependencies -- no future iterations should be done before the current iteration, but no iteration depends on the results of the previous iteration -- and this saves an additional `n+1`-space of memory.
 
 The core ideas and optimizations are the same and hold for [trinomial trees](../core/include/fastvol/american/ttree.hpp) as well, with the added benefit that these don't require the even-odd trick for payoff values.

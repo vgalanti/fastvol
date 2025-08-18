@@ -1,3 +1,9 @@
+[![version](https://img.shields.io/pypi/v/fastvol?label=&color=blue)](https://pypi.org/project/fastvol/) &nbsp;&nbsp;
+![cpp](https://img.shields.io/badge/C++-17-00599C)
+![nvcc](https://img.shields.io/badge/nvcc-11%2B-76B900)
+[![python](https://img.shields.io/badge/python-%E2%89%A5%203.10-blue)](https://pypi.org/project/fastvol/) &nbsp;&nbsp;
+[![license](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Fastvol
 
 Fastvol is a high-performance option pricing library for low-latency, high-throughput derivatives pricing. 
@@ -33,8 +39,7 @@ The high-level development plan, in order of implementation:
 | 12   | C++ neural network support via LibTorch                  |        |
 | 13   | Stochastic models: heston, local volatility...           |        |
 | 14   | Exotic options: barrier, lookback, asian...              |        |
-| 15   | Precompiled wheels for Linux, macOS, and Windows         |        |
-| 16   | Rust & OCaml language bindings                           |        |
+| 15   | Rust & OCaml language bindings                           |        |
 
 
 
@@ -74,8 +79,8 @@ cd fastvol
 pip install .
 ```
 
-* MacOS: Fastvol relies on OpenMP for CPU parallelism. On macOS, OpenMP must be installed manually via Homebrew: `brew install libomp`. PyTorch ships its own OpenMP runtime but omits headers. Fastvol links to that runtime while using the headers from Homebrew’s libomp.
-* Linux: On CUDA-enabled systems, ensure that `nvcc` is available and that the correct PyTorch CUDA wheel is installed before installing Fastvol. If the CUDA wheel is not pre-installed, Fastvol’s build system may default to CPU-only PyTorch during installation. This will not affect core CUDA pricing methods, but neural network surrogates will run on CPU only.
+* **MacOS**: To compile the source distribution, install CMake (`brew install cmake`) and a C/C++ compiler via Xcode command line tools (`xcode-select --install`). Fastvol relies on OpenMP for CPU parallelism, which must be installed manually on macOS (`brew install libomp`). PyTorch ships its own OpenMP runtime but omits headers — Fastvol links against the PyTorch runtime while using headers from Homebrew’s libomp.
+* **Linux**: On CUDA-enabled systems, ensure that `nvcc` is available and that the correct PyTorch CUDA wheel is installed before installing Fastvol. If the CUDA wheel is not pre-installed, Fastvol’s build system may default to CPU-only PyTorch during installation. This will not affect core CUDA pricing methods, but neural network surrogates will run on CPU only.
 
 ### C/C++/CUDA
 Fastvol's CPU and CUDA backends are implemented in C++ and organized as a standalone CMake project under `core/`.
