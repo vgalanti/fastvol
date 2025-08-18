@@ -1,10 +1,11 @@
-[![version](https://img.shields.io/pypi/v/fastvol?label=&color=blue)](https://pypi.org/project/fastvol/) &nbsp;&nbsp;
+# Fastvol
+
+[![version](https://img.shields.io/pypi/v/fastvol?label=&color=blue)](https://pypi.org/project/fastvol/) 
 ![cpp](https://img.shields.io/badge/C++-17-00599C)
 ![nvcc](https://img.shields.io/badge/nvcc-11%2B-76B900)
-[![python](https://img.shields.io/badge/python-%E2%89%A5%203.10-blue)](https://pypi.org/project/fastvol/) &nbsp;&nbsp;
+[![python](https://img.shields.io/badge/python-%E2%89%A5%203.10-blue)](https://pypi.org/project/fastvol/)
 [![license](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Fastvol
 
 Fastvol is a high-performance option pricing library for low-latency, high-throughput derivatives pricing. 
 
